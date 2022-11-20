@@ -1,3 +1,9 @@
+# Customized
+_*pycache*_/
+enum/*
+prune_enum/*
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
