@@ -37,8 +37,8 @@ for case_id, case_dict in enumerate(A.cases):
     dists = []
     A.empty_cache()
 
-    paths_indices = rank_angle(paths_case, rank_k, "hybrid")
-    # paths_indices = rank_dist(paths_case, rank_k)
+    # paths_indices = rank_angle(paths_case, rank_k, "hybrid")
+    paths_indices = rank_dist(paths_case, rank_k)
 
     for i, path in enumerate(paths_case):
         if i not in paths_indices:
