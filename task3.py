@@ -31,7 +31,7 @@ for case_id, case_dict in enumerate(A.cases):
         visualize = visualize_choices_triple
         opt = 11977.745265270445
         rank_N = 1
-        rank_k = 1
+        rank_k = 2
     else:
         case = [    # pc, po1, po2, pd1, pd2
             [case_dict['经度.6'], case_dict['纬度.6'], case_dict['所在link'], case_dict['ratio.6']],
@@ -50,11 +50,11 @@ for case_id, case_dict in enumerate(A.cases):
         visualize = visualize_choices_double
         opt = 13506.873184310927
         rank_N = 1
-        rank_k = 1
+        rank_k = 4
 
     paths = enum_path(case)
     A.empty_cache()
-    min_dist_info = [9999999, [-1 for _ in choices]]
+    min_dist_info = [9999999, [-1 for _ in choices], None]
 
     def dfs(path: list, n: int, record: list, choices: list, min_dist_info: list):
         # print(n,)
@@ -63,6 +63,7 @@ for case_id, case_dict in enumerate(A.cases):
             if d < min_dist_info[0]:
                 min_dist_info[0] = d
                 min_dist_info[1] = record.copy()
+                min_dist_info[2] = path
             return
         for i in choices[path[n] - 1]:
             record.append(i)
@@ -93,6 +94,14 @@ for case_id, case_dict in enumerate(A.cases):
 
     print(min_dist_info[0], A.lookup_times, min_dist_info[0] / opt)
 
+    print("接乘顺序：", min_dist_info[2])
+    print("上车点：")
+    for i, node in enumerate(min_dist_info[1][1:]):
+        for j, choice in enumerate(choices):
+            if node in choice:
+                print(choice.index(node) + 1, end=",")
+    print()
+
     map = visualize(case, choices)
     add_path(map, min_dist_info[1])
-    map.save(f"task3-{case_id}.html")
+    # map.save(f"task3-{case_id}-3_2.html")

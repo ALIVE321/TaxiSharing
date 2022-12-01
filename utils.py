@@ -139,23 +139,23 @@ def visualize_choices_triple(case: list, choices: list) -> folium.Map:
     folium.Marker([case[1][1], case[1][0]], popup='<i>起点1</i>', icon=folium.Icon(icon='info-sign', color='blue')).add_to(map1)
     folium.Marker([case[4][1], case[4][0]], popup='<i>终点1</i>', icon=folium.Icon(icon='info-sign', color='blue')).add_to(map1)
     for i, choice in enumerate(choices[0]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>起点1候车点{i}</i>', icon=folium.Icon(icon='cloud', color='blue')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>起点1候车点{i+1}</i>', icon=folium.Icon(icon='cloud', color='blue')).add_to(map1)
     for i, choice in enumerate(choices[3]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>终点1候车点{i}</i>', icon=folium.Icon(icon='ok-sign', color='blue')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>终点1候车点{i+1}</i>', icon=folium.Icon(icon='ok-sign', color='blue')).add_to(map1)
     
     folium.Marker([case[2][1], case[2][0]], popup='<i>起点2</i>', icon=folium.Icon(icon='info-sign', color='red')).add_to(map1)
     folium.Marker([case[5][1], case[5][0]], popup='<i>终点2</i>', icon=folium.Icon(icon='info-sign', color='red')).add_to(map1)
     for i, choice in enumerate(choices[1]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>起点2候车点{i}</i>', icon=folium.Icon(icon='cloud', color='red')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>起点2候车点{i+1}</i>', icon=folium.Icon(icon='cloud', color='red')).add_to(map1)
     for i, choice in enumerate(choices[4]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>终点2候车点{i}</i>', icon=folium.Icon(icon='ok-sign', color='red')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>终点2候车点{i+1}</i>', icon=folium.Icon(icon='ok-sign', color='red')).add_to(map1)
     
     folium.Marker([case[3][1], case[3][0]], popup='<i>起点3</i>', icon=folium.Icon(icon='info-sign', color='green')).add_to(map1)
     folium.Marker([case[6][1], case[6][0]], popup='<i>终点3</i>', icon=folium.Icon(icon='info-sign', color='green')).add_to(map1)
     for i, choice in enumerate(choices[2]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>起点3候车点{i}</i>', icon=folium.Icon(icon='cloud', color='green')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>起点3候车点{i+1}</i>', icon=folium.Icon(icon='cloud', color='green')).add_to(map1)
     for i, choice in enumerate(choices[5]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>终点3候车点{i}</i>', icon=folium.Icon(icon='ok-sign', color='green')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>终点3候车点{i+1}</i>', icon=folium.Icon(icon='ok-sign', color='green')).add_to(map1)
     
     map1.save(f"tmp_3.html")
     return map1
@@ -175,16 +175,16 @@ def visualize_choices_double(case: list, choices: list) -> folium.Map:
     folium.Marker([case[1][1], case[1][0]], popup='<i>起点1</i>', icon=folium.Icon(icon='info-sign', color='blue')).add_to(map1)
     folium.Marker([case[3][1], case[3][0]], popup='<i>终点1</i>', icon=folium.Icon(icon='info-sign', color='blue')).add_to(map1)
     for i, choice in enumerate(choices[0]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>起点1候车点{i}</i>', icon=folium.Icon(icon='cloud', color='blue')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>起点1候车点{i+1}</i>', icon=folium.Icon(icon='cloud', color='blue')).add_to(map1)
     for i, choice in enumerate(choices[2]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>终点1候车点{i}</i>', icon=folium.Icon(icon='ok-sign', color='blue')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>终点1候车点{i+1}</i>', icon=folium.Icon(icon='ok-sign', color='blue')).add_to(map1)
     
     folium.Marker([case[2][1], case[2][0]], popup='<i>起点2</i>', icon=folium.Icon(icon='info-sign', color='red')).add_to(map1)
     folium.Marker([case[4][1], case[4][0]], popup='<i>终点2</i>', icon=folium.Icon(icon='info-sign', color='red')).add_to(map1)
     for i, choice in enumerate(choices[1]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>起点2候车点{i}</i>', icon=folium.Icon(icon='cloud', color='red')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>起点2候车点{i+1}</i>', icon=folium.Icon(icon='cloud', color='red')).add_to(map1)
     for i, choice in enumerate(choices[3]):
-        folium.Marker([choice[1], choice[0]], popup=f'<i>终点2候车点{i}</i>', icon=folium.Icon(icon='ok-sign', color='red')).add_to(map1)
+        folium.Marker([choice[1], choice[0]], popup=f'<i>终点2候车点{i+1}</i>', icon=folium.Icon(icon='ok-sign', color='red')).add_to(map1)
 
     map1.save(f"tmp_2.html")
     return map1
